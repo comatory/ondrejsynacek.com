@@ -12,13 +12,24 @@
     gtag('config', 'UA-37237360-1');
   </script>
   <!-- @endif -->
-  <link rel="icon shortcut" type="image/png" sizes="32x32" href="/favicon.png" />
-  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <!-- @if env='production' -->
+    <link rel="icon shortcut" type="image/png" sizes="32x32" href="/favicon.<!-- @echo version -->.png" />
+    <link rel='shortcut icon' type='image/x-icon' href='/favicon.<!-- @echo version -->.ico' />
+  <!-- @endif -->
+  <!-- @if env='development' -->
+    <link rel="icon shortcut" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <!-- @endif -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Ondrej Synacek - Front end & Web developer</title>
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- @if env='production' -->
+    <link rel="stylesheet" type="text/css" href="css/style.<!-- @echo version -->.css">
+  <!-- @endif -->
+  <!-- @if env='development' -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- @endif -->
   <link href="https://fonts.googleapis.com/css?family=Share+Tech" rel="stylesheet">
 </head>
 <body>

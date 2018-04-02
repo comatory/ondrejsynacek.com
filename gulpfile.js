@@ -8,12 +8,12 @@ var gulp = require('gulp'), // Main Gulp module
     sass = require('gulp-sass'), // SASS styles
     open = require('gulp-open'), // Gulp browser opening plugin
     cleanCSS = require('gulp-clean-css'), // Minify CSS
-    CacheBuster = require('gulp-cachebust'), // Add hash to CSS & filenames
     preprocess = require('gulp-preprocess'), // Process env variables
+    rename = require('gulp-rename'), // Rename files 
     connect = require('gulp-connect'), // Gulp Web server runner plugin
     del = require('del'); // Deletes folders and files
 
-var cachebust = new CacheBuster();
+var pkgInfo = require('./package.json') 
 
 // Configuration
 var configuration = {
@@ -37,20 +37,23 @@ var configuration = {
 // Gulp task to copy HTML files to output directory
 gulp.task('html', function() {
     gulp.src(configuration.paths.src.html)
-        .pipe(preprocess({ context: { env: process.env.NODE_ENV || 'production' }}))
+        .pipe(preprocess({ context: { 
+            env: process.env.NODE_ENV || 'production' ,
+            version: pkgInfo['version']
+        }}))
         .pipe(gulp.dest(configuration.paths.dist))
         .pipe(connect.reload());
 });
 
 // Gulp task to concatenate our css files
 gulp.task('css', function () {
+   var fileName = isProduction() ? 'style.' + pkgInfo['version'] + '.css' : 'style.css'
    var stream = gulp.src(configuration.paths.src.css)
        .pipe(sass().on('error', sass.logError))
-       .pipe(concat('style.css'))
+       .pipe(concat(fileName))
 
     if (isProduction()) {
         stream = stream.pipe(cleanCSS())
-            .pipe(cachebust.resources())
     }
 
     stream = stream.pipe(gulp.dest(configuration.paths.dist + '/css'))
@@ -60,13 +63,12 @@ gulp.task('css', function () {
 });
 
 gulp.task('ico', function() {
-    var cachebust = new CacheBuster({
-        pathFormatter: function(dirname, basename, extname, checksum) {
-            return path.join(dirname, basename + extname + '?' + checksum);
-        },
-    });
     gulp.src(configuration.paths.src.icons)
-        .pipe(cachebust.resources())
+        .pipe(rename(function(path) {
+            if (isProduction()) {
+                path.basename = path.basename + '.' + pkgInfo['version']
+            }
+        }))
         .pipe(gulp.dest(configuration.paths.dist))
 })
 
