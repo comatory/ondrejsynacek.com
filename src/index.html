@@ -292,20 +292,29 @@
 
   
   <script>
+    // HACK: Will try to make this work on iOS Safari
+    var mobileSafari = window.navigator && window.navigator.userAgent ? 
+      /^(?=.*safari)(?=.*mobile).*$/mig.test(window.navigator.userAgent) :
+      false 
+
     // Insert starting view when hashtarget is not present in URL
     if (!/\#.+/.test(window.location.href)) {
       window.location.href = window.location.href + '#about-me';
     }
+
     // Stop href="#hashtarget" links jumping around the page
     var hashLinks = document.querySelectorAll("a[href^='#']");
     [].forEach.call(hashLinks, function (link) {
+      if (mobileSafari) {
+        return
+      }
       link.addEventListener("click", function (event) {
-      event.preventDefault();
-      history.pushState({}, "", link.href);
-      history.pushState({}, "", link.href);
-      history.back();
+        event.preventDefault();
+        history.pushState({}, "", link.href);
+        history.pushState({}, "", link.href);
+        history.back();
+      });
     });
-  });
   </script>
 </body>
 </html>
