@@ -1,11 +1,15 @@
 {
   "name": "ondrejsynacek-com",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Personal website hosted on ondrejsynacek.com. Includes build chain.",
   "main": "gulpfile.js",
+  "engines": {
+    "node": "8.9.3"
+  },
   "scripts": {
     "start": "NODE_ENV=development gulp",
-    "build": "NODE_ENV=production gulp build",
+    "build": "npm run clean && NODE_ENV=production gulp build",
+    "clean": "rm -rf dist && mkdir dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

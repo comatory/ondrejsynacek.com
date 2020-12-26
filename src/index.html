@@ -144,15 +144,18 @@
                   <div class="tag">PWA</div>
                   <div class="tag">Mobile</div>
                   <div class="tag">NodeJS</div>
-                  <div class="tag">VanillaJS</div>
+                  <div class="tag">SvelteJS</div>
                   <div class="tag">Service Worker</div>
                   <div class="tag">Offline</div>
+                  <div class="tag">No JS</div>
                 </div>
                 <p>
                   Very minimalistic Progressive Web App for converting Facebook
                   event URLs / event IDs into iCal files. Works well on mobile
                   where it can work as standalone app and list event data
                   even when offline.
+                  Built using SvelteJS to minimize payload with help from Webpack for code-splitting. Code for parsing HTML and event data is isomorphic and runs on both server and browser.
+                  It's so simple that it can actually run without JavaScript in browser and is <i>progressively enhanced</i>.
                   Use it on <a href="https://fb2ical.com" target="_blank">
                     fb2ical.com
                   </a>.
