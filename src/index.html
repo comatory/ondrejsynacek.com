@@ -2,15 +2,8 @@
 <html lang="en">
 <head>
   <!-- @if env='production' -->
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="<!-- @echo config-ga-tracking-url -->?id=<!-- @echo config-ga-tracking-code -->"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', "<!-- @echo config-ga-tracking-code -->");
-  </script>
+  <!-- Counter analytics -->
+  <script>if(!sessionStorage.getItem("_swa")&&document.referrer.indexOf(location.protocol+"//"+location.host)!== 0){fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"ondrejsynacek",utcoffset:"1"}))};sessionStorage.setItem("_swa","1");</script>
   <!-- @endif -->
   <!-- @if env='production' -->
     <link rel="icon shortcut" type="image/png" sizes="32x32" href="/favicon.<!-- @echo version -->.png" />
