@@ -14,16 +14,6 @@ var gulp = require('gulp'), // Main Gulp module
     del = require('del'); // Deletes folders and files
 
 var pkgInfo = require('./package.json') 
-var devConfig = require('./config.json')
-
-function getDevConfigEnvs() {
-    const configEnvs = {}
-    Object.keys(devConfig).forEach((key) => {
-        configEnvs[`config-${key}`] = devConfig[key]
-
-    })
-    return configEnvs
-}
 
 // Configuration
 var configuration = {
@@ -46,13 +36,13 @@ var configuration = {
 
 // Gulp task to copy HTML files to output directory
 gulp.task('html', function() {
-    const baseContext = Object.assign({
+    const context = {
       env: process.env.NODE_ENV || 'production' ,
       version: pkgInfo['version']
-    }, getDevConfigEnvs())
+    }
 
     gulp.src(configuration.paths.src.html)
-        .pipe(preprocess({ context: baseContext }))
+        .pipe(preprocess({ context }))
         .pipe(gulp.dest(configuration.paths.dist))
         .pipe(connect.reload());
 });
