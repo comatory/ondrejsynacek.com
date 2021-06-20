@@ -4,13 +4,14 @@
   "description": "Personal website hosted on ondrejsynacek.com. Includes build chain.",
   "main": "gulpfile.js",
   "engines": {
-    "node": "8.9.3"
+    "node": "14.15.1"
   },
   "scripts": {
-    "start": "NODE_ENV=development gulp",
-    "build": "npm run clean && NODE_ENV=production gulp build",
-    "clean": "rm -rf dist && mkdir dist",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run build:dev && es-dev-server --root-dir dist/ --app-index index.html --watch open",
+    "build": "npm run clean && ejs src/index.ejs -o dist/index.html && npm run copy",
+    "build:dev": "npm run clean && NODE_ENV=development ejs src/index.ejs -o dist/index.html && npm run copy",
+    "copy": "cp src/favicon.png dist/ && cp -R src/image dist/ && cp -R src/css dist/",
+    "clean": "rm -rf dist && mkdir dist"
   },
   "repository": {
     "type": "git",
@@ -19,14 +20,9 @@
   "author": "Ondrej Synacek",
   "license": "ISC",
   "devDependencies": {
-    "del": "^3.0.0",
-    "gulp": "^3.9.1",
-    "gulp-clean-css": "^3.9.3",
-    "gulp-concat": "^2.6.1",
-    "gulp-connect": "^5.5.0",
-    "gulp-open": "^3.0.1",
-    "gulp-preprocess": "^2.0.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.2.1"
-  }
+    "concurrently": "^6.2.0",
+    "ejs": "^3.1.6",
+    "es-dev-server": "^2.1.0"
+  },
+  "dependencies": {}
 }

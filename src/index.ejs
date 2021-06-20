@@ -1,28 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- @if env='production' -->
-  <!-- Counter analytics -->
-  <script>if(!sessionStorage.getItem("_swa")&&document.referrer.indexOf(location.protocol+"//"+location.host)!== 0){fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"ondrejsynacek",utcoffset:"1"}))};sessionStorage.setItem("_swa","1");</script>
-  <!-- @endif -->
-  <!-- @if env='production' -->
-    <link rel="icon shortcut" type="image/png" sizes="32x32" href="/favicon.<!-- @echo version -->.png" />
-    <link rel='shortcut icon' type='image/x-icon' href='/favicon.<!-- @echo version -->.ico' />
-  <!-- @endif -->
-  <!-- @if env='development' -->
-    <link rel="icon shortcut" type="image/png" sizes="32x32" href="/favicon.png" />
-    <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
-  <!-- @endif -->
+  <% if (process.env.NODE_ENV != 'development') { %>
+    <script>if(!sessionStorage.getItem("_swa")&&document.referrer.indexOf(location.protocol+"//"+location.host)!== 0){fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"ondrejsynacek",utcoffset:"1"}))};sessionStorage.setItem("_swa","1");</script>
+  <% } %>
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Ondrej Synacek - Front end & Web developer</title>
-  <!-- @if env='production' -->
-    <link rel="stylesheet" type="text/css" href="css/style.<!-- @echo version -->.css">
-  <!-- @endif -->
-  <!-- @if env='development' -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-  <!-- @endif -->
+  <link rel="stylesheet" type="text/css" href="css/main.css">
   <link href="https://fonts.googleapis.com/css?family=Share+Tech" rel="stylesheet">
 </head>
 <body>
@@ -392,7 +379,7 @@
     </div>
   </div>
 
-  
+
   <script>
     // HACK: Will try to make this work on iOS Safari
     var mobileSafari = window.navigator && window.navigator.userAgent ? 
