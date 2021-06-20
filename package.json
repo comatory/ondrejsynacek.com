@@ -8,8 +8,8 @@
   },
   "scripts": {
     "start": "npm run build:dev && es-dev-server --root-dir dist/ --app-index index.html --watch open",
-    "build": "npm run clean && ejs src/index.ejs -o dist/index.html && npm run copy",
-    "build:dev": "npm run clean && NODE_ENV=development ejs src/index.ejs -o dist/index.html && npm run copy",
+    "build": "npm run clean && node config/build.js && npm run copy",
+    "build:dev": "npm run clean && NODE_ENV=development node config/build.js && npm run copy",
     "copy": "cp src/favicon.png dist/ && cp -R src/image dist/ && cp -R src/css dist/",
     "clean": "rm -rf dist && mkdir dist"
   },
