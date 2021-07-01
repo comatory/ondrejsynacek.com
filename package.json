@@ -1,6 +1,6 @@
 {
   "name": "ondrejsynacek-com",
-  "version": "1.0.8",
+  "version": "2.0.0",
   "description": "Personal website hosted on ondrejsynacek.com. Includes build chain.",
   "engines": {
     "node": "14.15.1"
