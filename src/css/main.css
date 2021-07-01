@@ -166,37 +166,47 @@ section {
   display: flex;
   width: 100%;
 }
-.header__nav--contact:hover {
+
+.header__nav--about-me--active {
+  box-shadow: var(--active-box-shadow);
+}
+
+.header__nav--projects--active {
+  box-shadow: var(--active-box-shadow);
   color: var(--color5);
+}
+
+.header__nav--contact--active {
+  box-shadow: var(--active-box-shadow);
+  color: var(--color3);
+}
+
+.header__nav--about-me:hover {
+  color: var(--color3);
+  background-image: var(--nav-hover-background);
+}
+
+.header__nav--projects:hover {
+  color: var(--color5);
+  background-image: var(--nav-hover-background);
 }
 
 .header__nav--contact:hover {
   color: var(--color3);
+  background-image: var(--nav-hover-background);
 }
 
 .header__nav--about-me {
   background-color: var(--color2);
 }
 
-.header__nav--about-me:hover {
-  box-shadow: rgba(var(--color5), 0.4) 0px 4px 8px inset;
-}
-
 .header__nav--projects {
   background-color: var(--color3);
-}
-
-.header__nav--projects:hover {
-  box-shadow: rgba(var(--color4), 0.6) 0px 4px 8px inset;
 }
 
 .header__nav--contact {
   background-color: var(--color4);
   
-}
-
-.header__nav--contact:hover {
-  box-shadow: var(--color5) 0px 4px 8px inset;
 }
 
 .section {

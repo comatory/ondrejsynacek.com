@@ -4,13 +4,13 @@
     <h1 class="header__main-text">Ondrej Synacek</h1>
   </div>
   <nav class="header__nav">
-    <div class="header__nav--about-me">
+    <div class="header__nav--about-me <%= active === 'index' ? 'header__nav--about-me--active' : '' %>">
       <a href="/" class="header__navlink">About me</a>
     </div>
-    <div class="header__nav--projects">
+    <div class="header__nav--projects <%= active === 'projects' ? 'header__nav--projects--active' : '' %>">
       <a href="/projects" class="header__navlink">Projects</a>
     </div>
-    <div class="header__nav--contact">
+    <div class="header__nav--contact <%= active === 'contact' ? 'header__nav--contact--active' : '' %>">
       <a href="/contact" class="header__navlink">Contact</a>
     </div>
   </nav>
