@@ -2,7 +2,6 @@
   "name": "ondrejsynacek-com",
   "version": "1.0.8",
   "description": "Personal website hosted on ondrejsynacek.com. Includes build chain.",
-  "main": "gulpfile.js",
   "engines": {
     "node": "14.15.1"
   },
@@ -16,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@bitbucket.org:comatory/ondrejsynacek-com.git"
+    "url": "git@github.com:comatory/ondrejsynacek.com.git"
   },
   "author": "Ondrej Synacek",
   "license": "ISC",
