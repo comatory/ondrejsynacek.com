@@ -10,10 +10,12 @@
         <section id="about-me" class="section">
           <div class="about-me__container">
             <div class="about-me__profile-container">
-              <div class="image-container">
+              <picture class="image-container">
                 <div class="image-overlay"></div>
-                <img src="image/profile.jpg" alt="Ondrej Synacek" id="profile-photo">
-              </div>
+                <source srcset="image/profile.webp" type="image/webp">
+                <source srcset="image/profile.jpg" type="image/jpeg">
+                <img src="image/profile.jpg" alt="Ondrej Synacek" class="profile-photo">
+              </picture>
             </div>
             <div class="about-me__info-container">
               <p>

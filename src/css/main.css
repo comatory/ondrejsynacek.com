@@ -266,28 +266,10 @@ section {
   flex: 1;
 }
 
-#profile-photo {
+.profile-photo {
   width: 100%;
-  min-width: 250px;
-}
-
-.image-container {
-  position: relative;
-}
-
-.image-overlay {
-  position: absolute;
-  background: linear-gradient(
-    45deg,
-    rgba(var(--color3), 0.3) 0%,
-    rgba(var(--color2), 0.3) 45%,
-    rgba(var(--color5), 0.5) 100%,
-  );
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  transition: ease-in-out 0.3s;
+  min-width: 220px;
+  filter: grayscale() contrast(1.6) opacity(0.8);
 }
 
 .about-me__info-container {
