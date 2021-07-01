@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include(`${rootPath}/partials/head.ejs`); -%>
+  </head>
+  <body>
+    <div class="body-wrapper">
+      <div class="content-wrapper">
+        <%- include(`${rootPath}/partials/header.ejs`); -%>
+        <section id="projects" class="section">
+          <div class="row wrap">
+            <div class="col" id="projects">
+              <h3>Projects</h3>
+              <ul class="list">
+                <li>
+                  <a
+                    href="https://github.com/avocode/avocode-email-tagsinput"
+                    target="_blank"
+                  >
+                    avocode-email-tagsinput
+                  </a>
+                  <div class="tags">
+                    <div class="tag">React</div>
+                    <div class="tag">SlateJS</div>
+                    <div class="tag">ES6</div>
+                    <div class="tag">Flow</div>
+                    <div class="tag">Monorepo</div>
+                    <div class="tag">E2E specs</div>
+                  </div>
+                  <p>
+                    React component library that contains components for rendering
+                    tags within inputs. More specifically, the library allows you to insert
+                    and validate email tags, navigate via keyboard and much more. Built on 
+                    SlateJS editor and used in production within
+                    <a href="https://avocode.com" target="_blank">Avocode</a> application 
+                    that is used by thousands of users every day.
+                  </p>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/comatory/fb2iCal"
+                    target="_blank"
+                  >
+                    fb2iCal
+                  </a>
+                  <div class="tags">
+                    <div class="tag">PWA</div>
+                    <div class="tag">Mobile</div>
+                    <div class="tag">NodeJS</div>
+                    <div class="tag">SvelteJS</div>
+                    <div class="tag">Service Worker</div>
+                    <div class="tag">Offline</div>
+                    <div class="tag">No JS</div>
+                  </div>
+                  <p>
+                    Very minimalistic Progressive Web App for converting Facebook
+                    event URLs / event IDs into iCal files. Works well on mobile
+                    where it can work as standalone app and list event data
+                    even when offline.
+                    Built using SvelteJS to minimize payload with help from Webpack for code-splitting. Code for parsing HTML and event data is isomorphic and runs on both server and browser.
+                    It's so simple that it can actually run without JavaScript in browser and is <i>progressively enhanced</i>.
+                    Use it on <a href="https://fb2ical.com" target="_blank">
+                      fb2ical.com
+                    </a>.
+                  </p>
+                </li>
+                <li>
+                    <a
+                      href="https://github.com/comatory/portion-tracker/"
+                      target="_blank"
+                    >
+                      PortionTracker 
+                    </a>
+                    <div class="tags">
+                      <div class="tag">ES6</div>
+                      <div class="tag">NodeJS</div>
+                      <div class="tag">React</div>
+                      <div class="tag">Webpack</div>
+                      <div class="tag">SequelizeJS</div>
+                      <div class="tag">Dependency injection</div>
+                    </div>
+                    <p>
+                      Small app that aims to be simple and fast. It tracks your eating
+                      habits - how often you eat and also the amount of food and its type.
+                      I wrote this for my own use but anyone can use it as well: self-hosted
+                      on Heroku or <a href="https://portion-tracker.herokuapp.com" target="_blank">
+                       on my own instance 
+                      </a>.
+                    </p>
+                  </li>
+                  <li>
+                    <a
+                      href="https://comatory.github.io/rotation-zoomer/"
+                      target="_blank"
+                    >
+                      Rotation Zoomer
+                    </a>
+                    <div class="tags">
+                      <div class="tag">CoffeeScript</div>
+                      <div class="tag">jQuery</div>
+                      <div class="tag">Canvas</div>
+                    </div>
+                    <p>
+                      jQuery plugin that can serve images/canvases
+                      that are rotated and automatically maintains their position within
+                      DOM. Additional configuration allows user to rotate
+                      these elements "in-place" by 90-degree increments. Optional zoomer window
+                      can also be applied. This plugin was succesfully used in production
+                      on closed-source projects to display PDF and image documents.
+                    </p>
+                  </li>
+                  <li>
+                    <a
+                      href="https://github.com/comatory/Dignus"
+                      target="_blank"
+                    >
+                      Dignus
+                    </a>
+                    <div class="tags">
+                      <div class="tag">Ruby</div>
+                      <div class="tag">Ruby on Rails</div>
+                      <div class="tag">JavaScript</div>
+                      <div class="tag">PostgreSQL</div>
+                      <div class="tag">Heroku</div>
+                    </div>
+                    <p>
+                        Ruby on Rails web application that connects event organizers and
+                        performers. It is user-centric, location aware and media focused,
+                        internationalized (Czech and English) with AWS support.
+                    </p>
+                  </li>
+                  <li>
+                    <a
+                      href="https://github.com/comatory/zeroclickinfo-goodies"
+                      target="_blank"
+                    >
+                      DuckDuckGo Instant Answers
+                    </a>
+                    <div class="tags">
+                      <div class="tag">JSON</div>
+                    </div>
+                    <p>
+                        Contribution to DDG open source project. Cheat sheets 
+                        for Midnight Commander and Czech language phrases that are
+                        displayed in search queries.
+                    </p>
+                  </li>
+                  <li>
+                    <a
+                      href="http://skytospeak.com/"
+                      target="_blank"
+                    >
+                      Sky To Speak website
+                    </a>
+                    <div class="tags">
+                      <div class="tag">Wordpress</div>
+                      <div class="tag">HTML5</div>
+                      <div class="tag">CSS3</div>
+                    </div>
+                    <p>
+                        Hub page for the artist. Includes dynamic backgrounds.
+                    </p>
+                  </li>
+                </ul>
+            </div>
+            <div class="col" id="utilities">
+              <h3>Utilites</h3>
+              <ul class="list">
+                <li>
+                  <a
+              href="https://github.com/comatory/minidotenv"
+              target="_blank"
+            >
+                    minidotenv
+                  </a>
+            <div class="tags">
+                          <div class="tag">0 dependency</div>
+                          <div class="tag">Typescript</div>
+                          <div class="tag">Jest</div>
+                          <div class="tag">config</div>
+            </div>
+            <p>
+              Small utility library for loading contents of <code>.env</code> file into app environment.
+            </p>
+                </li>
+                <li>
+                  <a
+              href="https://github.com/comatory/comatory-vimfiles"
+              target="_blank"
+            >
+                    comatory-vimfiles
+                  </a>
+            <div class="tags">
+                          <div class="tag">VIM</div>
+                          <div class="tag">dotfiles</div>
+            </div>
+            <p>
+              Just another set of VIM settings that are suitable for me. It is not very complicated
+              or full features but it's quick to set up.
+            </p>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/comatory/proximity-search-array"
+                    target="_blank"
+                  >
+                    proximity-search-array
+                  </a>
+                  <div class="tags">
+                    <div class="tag">ES6</div>
+                    <div class="tag">NodeJS</div>
+                    <div class="tag">NPM</div>
+                    <div class="tag">Jest</div>
+                  </div>
+                  <p>
+                    Get a copy of array containing target item and its neighbours based on proximity.
+                  </p>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/comatory/es6-frontend-boilerplate-2017"
+                    target="_blank"
+                  >
+                    es6-frontend-boilerplate-2017
+                  </a>
+                  <div class="tags">
+                    <div class="tag">ES6</div>
+                    <div class="tag">ReactJS</div>
+                    <div class="tag">Redux</div>
+                    <div class="tag">Webpack</div>
+                    <div class="tag">CSS Modules</div>
+                  </div>
+                  <p>
+                     Project template for frontend apps based on ES6, React, Redux, Webpack and CSS modules.
+                  </p>
+                </li>
+                <li>
+                    <a
+                      href="https://github.com/comatory/oldGamesScraper"
+                      target="_blank"
+                    >
+                      oldGamesScraper
+                    </a>
+                    <div class="tags">
+                      <div class="tag">Python</div>
+                    </div>
+                    <p>
+                        Script for transformating content into PDF magazines for retro gaming website.
+                    </p>
+                  </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

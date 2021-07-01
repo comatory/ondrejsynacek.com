@@ -8,6 +8,8 @@ const srcPath = path.join(process.cwd(), 'src')
 /* NOTE: Important! Order of files matters */
 const files = [
   'index.ejs',
+  'projects.ejs',
+  'contact.ejs',
 ]
 
 const readHTMLFile = (filePath) => {

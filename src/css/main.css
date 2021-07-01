@@ -75,14 +75,6 @@ svg:hover path {
   opacity: 1.0;
 }
 
-section:not(:target) {
-  display: none;
-}
-
-section:target {
-  display: block;
-}
-
 section {
   max-width: 800px;
 }
