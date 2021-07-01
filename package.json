@@ -7,11 +7,12 @@
     "node": "14.15.1"
   },
   "scripts": {
-    "start": "npm run build:dev && es-dev-server --config config/es-dev-server.config.js",
+    "start": "npm run build:dev && concurrently 'es-dev-server --config config/es-dev-server.config.js' 'npm run watch'",
     "build": "npm run clean && node config/build.js && npm run copy",
     "build:dev": "npm run clean && NODE_ENV=development node config/build.js && npm run copy",
     "copy": "cp src/favicon.png dist/ && cp -R src/image dist/ && cp -R src/css dist/",
-    "clean": "rm -rf dist && mkdir dist"
+    "clean": "rm -rf dist && mkdir dist",
+    "watch": "onchange -v 'src/**/*' -- npm run build:dev"
   },
   "repository": {
     "type": "git",
@@ -22,7 +23,8 @@
   "devDependencies": {
     "concurrently": "^6.2.0",
     "ejs": "^3.1.6",
-    "es-dev-server": "^2.1.0"
+    "es-dev-server": "^2.1.0",
+    "onchange": "^7.1.0"
   },
   "dependencies": {}
 }
